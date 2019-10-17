@@ -13,5 +13,18 @@ spec:
         - image: 121397407795.dkr.ecr.ap-northeast-2.amazonaws.com/docker-wordpress:latest
           imagePullPolicy: Always
           name: wordpress
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: "wordpress-db.cqo7dgjsr0nm.ap-northeast-2.rds.amazonaws.com"
+            - name: WORDPRESS_DB_NAME
+              value: "wordpress"
+            - name: WORDPRESS_DB_PASSWORD
+              value: "admin1234!"
+            - name: WORDPRESS_DB_USER
+              value: "admin"
+            - name: WORDPRESS_TABLE_PREFIX
+              value: "wp_"
+            - name: WORDPRESS_CONFIG_EXTRA
+              value: "define('WP_MEMORY_LIMIT', '256M');"
           ports:
             - containerPort: 80
