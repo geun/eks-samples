@@ -10,7 +10,7 @@ spec:
         app: wordpress
     spec:
       containers:
-        - image: docker-wordpress:latest
+        - image: 121397407795.dkr.ecr.ap-northeast-2.amazonaws.com/docker-wordpress:latest
           imagePullPolicy: Always
           name: wordpress
           ports:
